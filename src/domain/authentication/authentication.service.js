@@ -39,7 +39,14 @@ export function login(data) {
 }
 
 export function logout() {
-    // TODO   
+    return fetch(`/api/logout/`)
+        .then(async res => {
+            if (res.status !== 200) {
+                const { message } = await res.json()
+                throw new Error(message)
+            }
+            return res
+        })
 }
 
 export function getMe() {

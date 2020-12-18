@@ -14,7 +14,7 @@ export default function Home() {
     return (
         <>
             {state.pictures.map(picture =>
-                <Card key={picture.id} picture={picture} />
+                <Card key={picture._id} picture={picture} />
             )}
         </>
     )
